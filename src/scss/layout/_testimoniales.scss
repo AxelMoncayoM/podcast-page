@@ -1,0 +1,48 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.testimoniales {
+  .contenido {
+    .testimonial {
+      background-color: v.$principal;
+      border: 0.5rem solid v.$secundario;
+      margin-bottom: 4rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      position: relative;
+
+      @include m.tablet {
+        max-width: 70%;
+
+        &:nth-child(3) {
+          margin-left: 10%;
+        }
+
+        &:nth-child(4) {
+          margin-left: 20%;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 5rem;
+        width: 5rem;
+        background-image: url(../img/comilla.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        position: absolute;
+        top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      p {
+        margin: 0;
+        padding-left: 6rem;
+      }
+    }
+  }
+}
